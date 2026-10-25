@@ -1,11 +1,10 @@
 import express from "express"; //Type: module in package.json
 //const express = require("express"); //tyoe commonjs
+import notesRoutes from "./routes/notesRoutes.js";
 
 const app = express();
 
-app.get("/api/notes", (req, res) =>{
-    res.send("you got 20 notes");
-});
+app.use("/api/notes", notesRoutes);
 
 app.listen(5001, () => {
     console.log("Server started on PORT: 5001")
